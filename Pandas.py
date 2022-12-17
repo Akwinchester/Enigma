@@ -1,7 +1,7 @@
 import pandas as pd
 
 # First DataFrame
-df1 = pd.DataFrame({'Time': [100, 200, 300, 400]}) #Первый фрейм - время с GPS датчика
+df1 = pd.DataFrame({'Time': [100, 200, 300, 400], 'Speed': [33,44,55,56]}) #Первый фрейм - время с GPS датчика
 
 # Second DataFrame
 df2 = pd.DataFrame({'Time': [100, 200, 300],
