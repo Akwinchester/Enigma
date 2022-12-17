@@ -18,3 +18,4 @@ with h5py.File('data_2022_10_16.hdf', 'r') as f:
 
 df = pd.DataFrame({'Время': utc_gps})
 df.to_csv('time.csv', index=False)
+print('ok')
