@@ -10,8 +10,11 @@ def update_result(result, new_list):
 result = np.array([])
 with h5py.File('data_2022_10_16.hdf', 'r') as f:
     print(list(f['GPS_1']['columns']))
-    utc_gps = np.array(f['GPS_1']['data'][::])
-    utc_gps = remove_duplicates(utc_gps)
+    utc = np.array(f['GPS_1']['data'][::])
+    utc = remove_duplicates(utc)
+    utc_gps = []
+    for i in range(0, len(utc)):
+        utc_gps.append(utc[i][1])
 
-    for i in range(0, len(utc_gps)):
-        print(i, ' ', utc_gps[i][1])
+df = pd.DataFrame({'Время': utc_gps})
+df.to_csv('time.csv', index=False)
